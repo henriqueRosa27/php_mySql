@@ -5,7 +5,9 @@
     session_start();
 
     //Criar variavel de sessão
-    $_SESSION["usuario"] = "Henrique";
+    if( !isset($_SESSION["user_portal"])){
+        header("location:login.php");
+    }
 
 ?>
 

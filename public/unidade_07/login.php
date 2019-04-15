@@ -1,5 +1,7 @@
 <?php require_once("../../conexao/conexao.php"); ?>
 <?php
+
+    session_start();
     if(isset($_POST["usuario"]) || isset($_POST["senha"])){
         $usuario = $_POST["usuario"];
         $senha = $_POST["senha"];
@@ -22,6 +24,7 @@
             $mensagem = "Login sem sucesso.";
         }
         else{
+            $_SESSION["user_portal"] = $informacao["clienteID"];
             header("location:listagem.php");
         }
     }
