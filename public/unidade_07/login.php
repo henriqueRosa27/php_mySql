@@ -2,7 +2,7 @@
 <?php
 
     session_start();
-    if(isset($_POST["usuario"]) || isset($_POST["senha"])){
+    if(isset($_POST["usuario"]) && isset($_POST["senha"])){
         $usuario = $_POST["usuario"];
         $senha = $_POST["senha"];
 
