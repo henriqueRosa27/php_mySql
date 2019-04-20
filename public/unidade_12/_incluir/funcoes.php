@@ -1,4 +1,4 @@
-<?php
+    <?php
     function gerarCodigoUnico() {
         $alfabeto   = "23456789ABCDEFJGHJKMNPQRS";
         $tamanho    = 30;
