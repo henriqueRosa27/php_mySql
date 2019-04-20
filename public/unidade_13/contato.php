@@ -1,4 +1,16 @@
 <?php require_once("../../conexao/conexao.php"); ?>
+<?php require_once("_incluir/funcoes.php"); ?>
+
+<?php
+    if(isset($_POST["enviar"])){
+        if(enviarMensagem($_POST)){
+            $retorno = "Mensagem enviada com sucesso";
+        }
+        else{
+            $retorno = "Erro ao enviar mensagem";
+        }
+    }
+?>
 
 <!doctype html>
 <html>
@@ -24,8 +36,8 @@
                     <input type="submit" name="enviar" value="Enviar Mensagem">
                     
                     <?php
-                        if( isset($mensagem) ) {
-                            echo "<p>" . $mensagem . "</p>";
+                        if( isset($retorno) ) {
+                            echo "<p>" . $retorno . "</p>";
                         }
                     ?>                     
                 </form>
